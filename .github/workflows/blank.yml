@@ -35,5 +35,4 @@ jobs:
           echo "------------ README.txt ------------"
           cat README.txt
           echo "------------------------------------"
-          LINE_COUNT=$(cat README.txt | wc -l)
-          [ $(( $LINE_COUNT % 2 )) -eq 1 ] && exit 1
+          bash -c "LINE_COUNT=$(cat README.txt | wc -l); [ $(( $LINE_COUNT % 2 )) -eq 1 ] && exit 1"
